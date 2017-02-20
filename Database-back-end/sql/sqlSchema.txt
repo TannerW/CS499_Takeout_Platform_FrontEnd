@@ -1,0 +1,55 @@
+Users:
+	- userid
+	- username
+	- email
+	- type -- "customer", "manager", "admin", "chief", etc.
+	- password
+	- salt -- for encryption
+		
+User Details:
+	- userid
+	- address
+	- zipcode
+	- password
+
+User Rating:
+	- userid
+	- recipeid
+	- rating -- int/float, 1-5
+
+Orders:
+	- orderid 
+	- userid
+	- status  -- "cart", "processing", "cooked", or "picked-up"
+	- order_date
+	- total
+	
+// Can retrieve the recipe and day of the week of each order from weekid
+Order Details:
+	- orderid
+	- weekid
+	- quantity 
+	- date
+
+weeklyForecast:
+	- weekid -- formatting with possibly "YYWW" (ex: 3rd week of january, 2017 - 1703)
+	- recipeid
+	- day -- "M" "T" "W" "R" "F" "S" "U"
+
+
+Recipes:
+	- recipeid
+	- title
+	- description
+	- ingredients 
+	- servingSize
+	- allergies
+	- price
+	- discount
+	
+POSSIBLE TABLE ADDITIONS, DEPENDING ON API/COOKIE USAGE:
+	* Cart:
+	* PaymentMethod:
+
+
+
