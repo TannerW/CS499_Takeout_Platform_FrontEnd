@@ -1,0 +1,22 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 19, 2017, 11:39:13 AM
+    Author     : tannerwilkerson
+*/
+
+//CUSTOM COLORS
+$main-theme-blue: #4885ed;
+$main-theme-red: #ed6048;
+$main-theme-yellow: #edb348;
+
+.button{
+    background-color: $main-theme-blue;
+}
+
+.button:hover{
+    background-color: lighten($main-theme-blue, 10%);
+}
