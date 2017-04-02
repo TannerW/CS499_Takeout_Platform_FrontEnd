@@ -29,6 +29,9 @@ function getMyProfileButton() {
         //);
 
         $result .= $response;
+        
+        
+        echo $currLocation;
 
         $string = json_decode($result, true);
 

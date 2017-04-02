@@ -13,14 +13,22 @@ and open the template in the editor.
         <link rel="stylesheet" href="css/ownerPortal.css" />
 
         <?php
-        $cookie_name = "token";
-        ?>
+                            include 'PHPHelpers/permissionPolicer.php';
+                            $permission = permissionPolicer();
+                            ?>
     </head>
 
     <body>
+        <?php
+        if ($permission == "False"){
+            ?>
+            You Really Should Be Here.. go to: https://www.anderskitchen.com/login.php to log in.
+        <?php
+        }else{
+        ?>
         <div class="hero row collapse">
             <div class="menu-bar medium-2 columns">
-                <h3 style="color: white;">Ander's Kitchen</h3>
+                <h3 style="color: white;">Ander's Kitchen <?php echo $permission; echo $_SERVER['REQUEST_URI']; ?></h3>
                 <ul class="tabs vertical" id="example-vert-tabs" data-tabs>
                     <li class="tabs-title"><a href="#panel0v"><img src="https://placehold.it/50x50">My Profile</a></li>
                     <li class="tabs-title is-active"><a href="#panel1v" aria-selected="true">Dashboard</a></li>
@@ -209,6 +217,7 @@ and open the template in the editor.
 
             </div>
         </div>-->
+        <?php }?>
         <script type="text/javascript" src="js/vendor/jquery.js"></script>
         <script type="text/javascript" src="js/vendor/foundation.min.js"></script>
         <script type="text/javascript" src="js/script.js"></script> <!---My custom jscript and jquery--->

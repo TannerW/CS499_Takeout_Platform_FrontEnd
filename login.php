@@ -32,7 +32,7 @@ and open the template in the editor.
 
                             <?php
                             if (isset($result)) {
-                                echo $result['id'];
+                                echo $result['abilities'];
                                 echo "\n";
                                 echo $result['email'];
                             }
