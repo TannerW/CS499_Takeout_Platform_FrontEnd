@@ -1,0 +1,26 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<body>
+<div>My Name is tanner</div>
+<?php
+echo "Hello.";
+
+require_once '/var/www/html/unirest/vendor/mashape/unirest-php/src/Unirest.php';
+
+echo "Hello.";
+
+$query = array('email' => 'atest@atest.com', 'password' => 'atestpassword');
+$headers = array('Accept' => 'application/json');
+$response = Unirest\Request::post("http://anderskitchen.com:9000/session",$headers,$query);
+
+
+echo $response;
+
+
+
+
+
+
+?>
+</body>
+</html>
