@@ -11,10 +11,10 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/foundation.css" /> <!--foundation styles-->
         <link rel="stylesheet" href="css/ownerPortal.css" />
-        
-                <?php
-    $cookie_name = "token";
-?>
+
+        <?php
+        $cookie_name = "token";
+        ?>
     </head>
 
     <body>
@@ -161,9 +161,9 @@ and open the template in the editor.
                                 </ul>
                             </div>
                         </div>
-			<iframe style="width: 100%; height:700px;" src="RecipeBook.php"></iframe>
+                        <iframe style="width: 100%; height:700px;" src="RecipeBook.php"></iframe>
                     </div>
-			
+
                     <div class="tabs-panel Customers" id="panel4v">
                         <div class="top-bar RecipeTopBar">
                             <div class="top-bar-left">
@@ -182,7 +182,7 @@ and open the template in the editor.
                                 </ul>
                             </div>
                         </div>
-			
+
                     </div>
                     <div class="tabs-panel FinanceTracking" id="panel5v ">
                         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
