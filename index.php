@@ -31,12 +31,12 @@
         </div>
         <div class='row'>
             <center>
-                <a class="button expanded" href="login.php"><h3>Returning Customer? Click Here to Sign In!</h3></a>
+                <a class="button expanded" href="https://www.anderskitchen.com/login.php"><h3>Returning Customer? Click Here to Sign In!</h3></a>
             </center>
         </div>
         <div class='row'>
             <center>
-                <a class="button expanded" href="login.php"><h3>New Customer? Click Here to Make a Free Account!</h3></a>
+                <a class="button expanded" href="https://www.anderskitchen.com/login.php"><h3>New Customer? Click Here to Make a Free Account!</h3></a>
             </center>
 
 

@@ -51,9 +51,24 @@ $(function () {
             {
                 $.cookie("token", data["token"], {expires: 30, path: '/'}); // Sample 2
                 //store.setJWT(data["token"]);
-                alert($.cookie("token"));
+                //alert($.cookie("token"));
             }
         });
+
+//        $.ajax({
+//            type: "GET",
+//            url: "https://www.anderskitchen.com:9000/me",
+//            beforeSend: function(request) {
+//    request.setRequestHeader("Authorization", "JWT " + $.cookie("token"));
+//  },
+//            contentType: "application/json; charset=utf-8",
+//            dataType: "json",
+//            success: function (data)
+//            {
+//                alert(data);
+//            }
+//        });
+
         e.preventDefault(); // avoid to execute the actual submit of the form.
     });
 });
