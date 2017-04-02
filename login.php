@@ -18,17 +18,6 @@ and open the template in the editor.
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" />
 
         <script src="js/vendor/modernizr.js"></script>
-
-        <?php
-        $cookie_name = "token";
-        if (!isset($_COOKIE[$cookie_name])) {
-            $tokenSet = True;
-        } else {
-            $tokenSet = False;
-            //echo "Cookie '" . $cookie_name . "' is set!<br>";
-            //echo "Value is: " . $_COOKIE[$cookie_name];
-        }
-        ?>
     </head>
     <body>
         <form method="post" role="form" id="loginForm">
@@ -36,6 +25,18 @@ and open the template in the editor.
                 <div class="medium-6 columns medium-centered">
                     <center>
                         <label>Email
+                            <?php
+                            include 'PHPHelpers/getMyProfileButton.php';
+                            $result = getMyProfileButton();
+                            ?>
+
+                            <?php
+                            if (isset($result)) {
+                                echo $result['id'];
+                                echo "\n";
+                                echo $result['email'];
+                            }
+                            ?> 
                             <input type="email" name="email" id="email" placeholder="Your email address">
                         </label>
                     </center>
