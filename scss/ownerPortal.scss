@@ -16,7 +16,7 @@ $main-theme-yellow: #edb348;
 .row{
     margin: 0 !important;
     full {
-    max-width: 100%; }
+        max-width: 100%; }
 }
 .menu-bar{
     height: 100%;
@@ -47,43 +47,43 @@ $main-theme-yellow: #edb348;
 }
 
 .row.full {
-  max-width: 100%; }
+    max-width: 100%; }
 
 .menu-bar{
     display: inline-block;
-  position: fixed;
-  background-color: $main-theme-blue;
-  top: 0;
-  bottom: 0; 
-  padding: 0 !important;
+    position: fixed;
+    background-color: $main-theme-blue;
+    top: 0;
+    bottom: 0; 
+    padding: 0 !important;
 }
 
 .sidebar {
-  display: inline-block;
-  position: fixed;
-  background-color: $main-theme-blue;
-  top: 0;
-  bottom: 0; 
-  padding: 0 !important;
-  font-size: 32px;
+    display: inline-block;
+    position: fixed;
+    background-color: $main-theme-blue;
+    top: 0;
+    bottom: 0; 
+    padding: 0 !important;
+    font-size: 32px;
     h1 {
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 800; }
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 800; }
     h2 {
-    font-weight: 300;
-    color: #B0CADB; }
+        font-weight: 300;
+        color: #B0CADB; }
 
-  }
+}
 
-  .middle-header {
+.middle-header {
     text-align: right;
     position: relative;
     top: 25%;
     transform: translateY(85%); }
 
 .middle-header {
-  text-align: center; }
+    text-align: center; }
 
 .menuSelection{
     height: 10%;
@@ -97,5 +97,5 @@ $main-theme-yellow: #edb348;
 }
 
 .OrderEntry{
-    
+
 }
