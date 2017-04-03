@@ -52,22 +52,34 @@ $(function () {
                 $.cookie("token", data["token"], {expires: 30, path: '/'}); // Sample 2
                 //store.setJWT(data["token"]);
                 //alert($.cookie("token"));
+                
+                $.ajax({
+            type: "GET",
+            url: "https://www.anderskitchen.com:9000/me",
+            headers: {"Content-Type":"application/json","Authorization":"JWT "+data["token"]},
+            dataType: "json",
+            success: function (data) {
+                switch (data["abilities"]){
+                    case "admin":
+                        window.location.href = "https://www.anderskitchen.com/ownerPortal.php";
+                        break;
+                    case "chef":
+                        window.location.href = "https://www.anderskitchen.com/ownerPortal.php";
+                        break;
+                    case "driver":
+                        window.location.href = "https://www.anderskitchen.com/driverPortal.php";
+                        break;
+                    case "customer":
+                        window.location.href = "https://www.anderskitchen.com/customerPortal.php";
+                        break;
+                    default:
+                        window.location.href = "https://www.anderskitchen.com/customerPortal.php";
+                        break;
+                }
             }
         });
-
-//        $.ajax({
-//            type: "GET",
-//            url: "https://www.anderskitchen.com:9000/me",
-//            beforeSend: function(request) {
-//    request.setRequestHeader("Authorization", "JWT " + $.cookie("token"));
-//  },
-//            contentType: "application/json; charset=utf-8",
-//            dataType: "json",
-//            success: function (data)
-//            {
-//                alert(data);
-//            }
-//        });
+            }
+        });
 
         e.preventDefault(); // avoid to execute the actual submit of the form.
     });
