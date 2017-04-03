@@ -21,13 +21,13 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        if ($permission == "False"){
+        if ($permission == "False") {
             ?>
             You Really Shouldn't Be Here.. go to: https://www.anderskitchen.com/login.php to log in.
-        <?php
-        }else{
-        ?>
-        
-        <?php }?>
+            <?php
+        } else {
+            ?>
+            You're on the driver's page... it just hasn't been built yet.
+        <?php } ?>
     </body>
 </html>
