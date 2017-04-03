@@ -18,17 +18,31 @@ and open the template in the editor.
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" />
 
         <script src="js/vendor/modernizr.js"></script>
+        <?php
+        $cookie_name = "token";
+        include 'PHPHelpers/getMyProfileButton.php';
+        $result = getMyProfileButton();
+        ?>
     </head>
     <body>
+        <?php
+        if ($result != "No token") {
+            ?>
+    <center>Uh oh! we already see someone signed in.</center>
+            <div class='row'>
+                <center><a class="button expanded" href="https://www.anderskitchen.com/PHPHelpers/signOut.php"><h3>Are you not <?php echo $result['email'];?>? Click here to sign out.</h3></a></center>
+        </div>
+        <div class='row'>
+            <center><a class="button expanded" href="https://www.anderskitchen.com/customerPortal.php"><h3>If <?php echo $result['email'];?> is your account, then click here to go to your customer page and start your order!</h3></a></center>
+        </div>
+            <?php
+        } else {
+            ?>
         <form method="post" role="form" id="loginForm">
             <div class="row" id="email-div">
                 <div class="medium-6 columns medium-centered">
                     <center>
                         <label>Email
-                            <?php
-                            include 'PHPHelpers/getMyProfileButton.php';
-                            $result = getMyProfileButton();
-                            ?>
 
                             <?php
                             if (isset($result)) {
@@ -68,6 +82,7 @@ and open the template in the editor.
             </div>
         </div>
 
+        <?php } ?>
         <script src="js/vendor/jquery.js"></script>
         <script type="text/javascript" src="js/jquery.cookie.js"></script>
         <script src="js/vendor/foundation.min.js"></script>
