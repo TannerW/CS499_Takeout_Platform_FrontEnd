@@ -77,7 +77,7 @@ and open the template in the editor.
         <div class="row">
             <div class="medium-6 columns medium-centered">
                 <center>
-                    <a class="button" href="#">Don't have an account? Click Here to make a free one!</a>
+                    <a class="button" href="https://www.anderskitchen.com/newUser.php">Don't have an account? Click Here to make a free one!</a>
                 </center>
             </div>
         </div>
