@@ -21,7 +21,7 @@ $(function () {
 // this is the id of the form
     $("#loginForm").submit(function (e) {
 
-        var url = "https://www.anderskitchen.com:9000/session"; // the script where you handle the form input.
+        var url = "https://www.anderskitchen.com/api/session"; // the script where you handle the form input.
 
         var complex = $("#loginForm").serialize(); // name1=value1&name2=value2
         var json = toSimpleJson(complex); // {"name1":"value1", "name2":"value2"}
@@ -55,7 +55,7 @@ $(function () {
 
                 $.ajax({
                     type: "GET",
-                    url: "https://www.anderskitchen.com:9000/me",
+                    url: "https://www.anderskitchen.com/api/me",
                     headers: {"Content-Type": "application/json", "Authorization": "JWT " + data["token"]},
                     dataType: "json",
                     success: function (data) {

@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>schedulingHelper.php</url>
+            <bookmark id="1">
+                <name/>
+                <line>83</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/Users/tannerwilkerson/NetBeansProjects/CS499PHPProject/CS499_Takeout_Platform_FrontEnd/RecipeBook.php</file>
             <file>file:/Users/tannerwilkerson/NetBeansProjects/CS499PHPProject/CS499_Takeout_Platform_FrontEnd/newUser.php</file>
-            <file>file:/Users/tannerwilkerson/NetBeansProjects/CS499PHPProject/CS499_Takeout_Platform_FrontEnd/index.php</file>
-            <file>file:/Users/tannerwilkerson/NetBeansProjects/CS499PHPProject/CS499_Takeout_Platform_FrontEnd/ownerPortal.php</file>
-            <file>file:/Users/tannerwilkerson/NetBeansProjects/CS499PHPProject/CS499_Takeout_Platform_FrontEnd/login.php</file>
-            <file>file:/Users/tannerwilkerson/NetBeansProjects/CS499PHPProject/CS499_Takeout_Platform_FrontEnd/PHPHelpers/signOut.php</file>
-            <file>file:/Users/tannerwilkerson/NetBeansProjects/CS499PHPProject/CS499_Takeout_Platform_FrontEnd/PHPHelpers/getMyProfileButton.php</file>
-            <file>file:/Users/tannerwilkerson/NetBeansProjects/CS499PHPProject/CS499_Takeout_Platform_FrontEnd/js/login.js</file>
+            <file>file:/Users/tannerwilkerson/NetBeansProjects/CS499PHPProject/CS499_Takeout_Platform_FrontEnd/PHPHelpers/permissionPolicer.php</file>
+            <file>file:/Users/tannerwilkerson/NetBeansProjects/CS499PHPProject/CS499_Takeout_Platform_FrontEnd/PHPHelpers/addToMenu.php</file>
+            <file>file:/Users/tannerwilkerson/NetBeansProjects/CS499PHPProject/CS499_Takeout_Platform_FrontEnd/driverPortal.php</file>
+            <file>file:/Users/tannerwilkerson/NetBeansProjects/CS499PHPProject/CS499_Takeout_Platform_FrontEnd/spoonacularRecipeQuery.php</file>
+            <file>file:/Users/tannerwilkerson/NetBeansProjects/CS499PHPProject/CS499_Takeout_Platform_FrontEnd/schedulingHelper.php</file>
         </group>
     </open-files>
 </project-private>
