@@ -87,7 +87,7 @@ and open the template in the editor.
         <script type="text/javascript" src="js/jquery.cookie.js"></script>
         <script src="js/vendor/foundation.min.js"></script>
         <script type="text/javascript" src="js/script.js"></script> <!---My custom jscript and jquery--->
-        <script type="text/javascript" src="js/login.js"></script>
+        <script type="text/javascript" src="js/loginv2.js"></script>
         <script>
             $(document).foundation();
         </script>

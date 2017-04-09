@@ -21,9 +21,9 @@ function permissionPolicer() {
     } else {
         $currLocation = $_SERVER['REQUEST_URI']; //current url
 
-        echo $currLocation;
+        //echo $currLocation;
 
-        $requesturl = "https://www.anderskitchen.com:9000/me"; //request url
+        $requesturl = "https://www.anderskitchen.com/api/me"; //request url
 
         $auth = 'JWT ' . $_COOKIE[$cookie_name];
         $response = \Httpful\Request::get($requesturl)->addHeader('Authorization', $auth)->send();
