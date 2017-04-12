@@ -19,8 +19,6 @@
 
         <?php
         $cookie_name = "token";
-        include 'PHPHelpers/getMyProfileButton.php';
-        $result = getMyProfileButton();
         ?>
 
     </head>
@@ -32,22 +30,19 @@
             </center>
         </div>
         <div class='row'>
-<?php
-if ($result == "No token") {
-    echo '<center><a class="button expanded" href="https://www.anderskitchen.com/login.php"><h3>Returning Customer? Click Here to Sign In!</h3></a></center>';
-} else {
-    echo '<center><a class="button expanded" href="https://www.anderskitchen.com/customerPortal.php"><h3>Hi, ' . $result['email'] . '! Click here to start your order.</h3></a></center>';
-}
-?>
+            <center>
+                <a class="button expanded" href="https://www.anderskitchen.com/login.php"><h3>Returning Customer? Click Here to Sign In!</h3></a>
+            </center>
         </div>
         <div class='row'>
-<?php
-if ($result == "No token") {
-    echo '<center><a class="button expanded" href="https://www.anderskitchen.com/newUser.php"><h3>New Customer? Click Here to Make a Free Account!</h3></a></center>';
-} else {
-    echo '<center><a class="button expanded" href="https://www.anderskitchen.com/PHPHelpers/signOut.php"><h3>Click here to sign out</h3></a></center>';
-}
-?>
+            <center>
+                <a class="button expanded" href="https://www.anderskitchen.com/login.php"><h3>New Customer? Click Here to Make a Free Account!</h3></a>
+            </center>
+
+
+
+
+
         </div>
         <div class='row'>
             <ul class="tabs" data-tabs id="menu">

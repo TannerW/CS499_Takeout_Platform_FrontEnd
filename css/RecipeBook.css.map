@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA;;;;EAIE;AACF;;;EAGE;AAEF,KAAK;EAED,MAAM,EAAE,KAAK;;AAGjB,SAAS;EACL,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,KAAK;;AAGhB,OAAO;EACH,MAAM,EAAC,mBAAmB",
-"sources": ["../scss/RecipeBook.scss"],
-"names": [],
-"file": "RecipeBook.css"
-}
