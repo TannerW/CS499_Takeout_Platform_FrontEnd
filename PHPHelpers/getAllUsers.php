@@ -5,12 +5,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+/**
+       * 
+       * acquire all registered users
+       *
+       * @param none
+       * @return formatted html to present all the users in a spreadsheet style
+       */
+
 function getAllUsers() {
-    /*
-     * To change this license header, choose License Headers in Project Properties.
-     * To change this template file, choose Tools | Templates
-     * and open the template in the editor.
-     */
+    //--------------ACQUIRE TOKEN---------------
     require_once './httpful.phar';
 
     $cookie_name = "token";
@@ -22,6 +27,7 @@ function getAllUsers() {
 
         $auth = 'JWT ' . $_COOKIE[$cookie_name];
 
+        //----------send token, ask for users---------
         $response = \Httpful\Request::get($url)->addHeader('Authorization', $auth)->send();
         //$response = Unirest\Request::get("https://www.anderskitchen.com/api/me", array("Authorization" => "JWT " . $_COOKIE[$cookie_name]));
         //$response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?diet=&type=&query=salad&", array(
@@ -29,6 +35,8 @@ function getAllUsers() {
         //            "Accept" => "application/json"
         //                )
         //);
+        
+        //------------PARSE RESPONSE--------------
 
         $result .= $response;
 
@@ -36,11 +44,12 @@ function getAllUsers() {
         
         $index=0; //index number of users
         
+        //construct spreadsheet header
         $parsed .= '<div class="row full customerEntry" style="background-color: lightgrey">
                                 <div class="medium-1 column">User ID</div>
                                 <div class="medium-2 column">Name</div>
                                 <div class="medium-4 column">Address</div>
-                                <div class="medium-3 column"></div>
+                                <div class="medium-3 column">Email</div>
                                 <div class="medium-1 column"></div>
                                 <div class="medium-1 column"></div>
                             </div>';
@@ -49,12 +58,17 @@ function getAllUsers() {
             $index = $index + 1;
             $userID = $i["id"]; //get user id
             
-            //request uder info
+            //request specific user info
             $userQueryURL = "https://www.anderskitchen.com/api/user/" . $userID;
             $userQuery = \Httpful\Request::get($userQueryURL)->addHeader('Authorization', $auth)->send();
             $user = json_decode($userQuery, true);
+//            if ($index === 7)
+//            {
+//                var_dump($user);
+//                var_dump($user["Profiles"][0]);
+//            }
             
-            $userProfile=$user["profile"]; //get profile from json
+            $userProfile=$user["Profiles"][0]; //get profile from json
             
             //choose a row color to ease viewing
             if ($index%2 == 0){
@@ -63,11 +77,12 @@ function getAllUsers() {
                 $backgroundColor ='';
             }
             
+            //construct row for current user
             $parsed .= '<div class="row full customerEntry"' . $backgroundColor . '>
                                 <div class="medium-1 column">'.$userID.'</div>
-                                <div class="medium-2 column">'.$userProfile["first_name"].$userProfile["last_name"].'</div>
+                                <div class="medium-2 column">'.$userProfile["first_name"].' '.$userProfile["last_name"].'</div>
                                 <div class="medium-4 column">'.$userProfile["street_1"].'</div>
-                                <div class="medium-3 column"></div>
+                                <div class="medium-3 column">'.$user["email"].'</div>
                                 <div class="medium-1 column"></div>
                                 <div class="medium-1 column"></div>
                             </div>';

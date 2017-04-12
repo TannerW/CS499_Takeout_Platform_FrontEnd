@@ -6,6 +6,13 @@
  * and open the template in the editor.
  */
 
+/**
+       * 
+       * acquire all registered users
+       *
+       * @param baseURLid - string - the url of the recipe page that you'd like to find the cost per serving of
+       * @return the cost per serving as a string
+       */
 function getPricePerServing($baseURLid){
     
 //    $url = "https://spoonacular.com/".$baseURLid;
@@ -16,6 +23,7 @@ function getPricePerServing($baseURLid){
 //
 //    $pricePerServing = $first_step;
     
+    //extract the recipe page and crawl for spoonacularPriceBreakdownTable, then get price per serving
     $doc = new DomDocument();
     $doc->loadHTMLFile("https://spoonacular.com/".$baseURLid);
     $thediv = $doc->getElementByClass('spoonacularPriceBreakdownTable');

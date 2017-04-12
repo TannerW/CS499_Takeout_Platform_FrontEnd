@@ -34,26 +34,45 @@ and open the template in the editor.
             <?php
             $data = array(
                 'recipe_id' => $_GET["recipe_id"],
-                    'recipeName' => $_GET["recipeName"],
-                    'pictureURL' => $_GET["pictureURL"],
-                    'recipeURL' => $_GET["recipeURL"]
+                'recipeName' => $_GET["recipeName"],
+                'pictureURL' => $_GET["pictureURL"],
+                'recipeURL' => $_GET["recipeURL"]
             );
+
+            $url = $data['recipeURL'];
+            $html = file_get_contents($url);
+            $string = "Cost per Serving:";
+            if (strpos($html, $string) !== false) {
+                $pricePerserving = substr($html, strpos($html, $string) + strlen($string), 8);
+            } else {
+                $pricePerserving = "Error: Price per serving not Found";
+            }
             ?>
-            <?php
-            echo $data['recipe_id'];
-            echo $data['misc'];
-            ?>
-            <h1>Awesome!</h1>
+    <center><h1>Save or Schedule!</h1></center>
             <br>
+            <h2>Save this recipe</h2>
+            <form action="https://www.anderskitchen.com/PHPHelpers/saveRecipe.php" method="post">
+                <center>
+                    <?php //var_dump($data['misc']); ?>
+                    <input type="hidden" name="recipe_id" id="recipe_id" value="<?php echo $data['recipe_id']; ?>">
+                    <input type="hidden" name="recipeName" id="recipeName" value="<?php echo $data['recipeName']; ?>">
+                    <input type="hidden" name="pictureURL" id="pictureURL" value="<?php echo $data['pictureURL']; ?>">
+                    <input type="hidden" name="recipeURL" id="recipeURL" value="<?php echo $data['recipeURL']; ?>">
+                    <input class="button" name="saveRecipe" id="saveRecipe" type="submit" value="Save this recipe">
+                </center>
+            </form>
+            <hr>
+            <h2>Schedule<h2>
+            <h3>You can make this meal for roughly <?php echo $pricePerserving;?></h3>
             <p class="lead">Pick the date of when you want to schedule this meal! Then, click schedule!</p>
             <form action="https://www.anderskitchen.com/PHPHelpers/addToMenu.php" method="post">
                 <center>
-                    <?php var_dump($data['misc']);?>
+                    <?php //var_dump($data['misc']); ?>
                     <input type="text" class="span2" id="dp1" name="dp1">
-                    <input type="hidden" name="recipe_id" value="<?php echo $data['recipe_id'];?>">
-                    <input type="hidden" name="recipeName" value="<?php echo $data['recipeName'];?>">
-                    <input type="hidden" name="pictureURL" value="<?php echo $data['pictureURL'];?>">
-                    <input type="hidden" name="recipeURL" value="<?php echo $data['recipeURL'];?>">
+                    <input type="hidden" name="recipe_id" value="<?php echo $data['recipe_id']; ?>">
+                    <input type="hidden" name="recipeName" value="<?php echo $data['recipeName']; ?>">
+                    <input type="hidden" name="pictureURL" value="<?php echo $data['pictureURL']; ?>">
+                    <input type="hidden" name="recipeURL" value="<?php echo $data['recipeURL']; ?>">
                     <input class="button" name="addToTheMenu" type="submit" value="Schedule">
                 </center>
             </form>
@@ -92,7 +111,6 @@ and open the template in the editor.
         });
     </script>
     <script type="text/javascript">
-        $(document).foundation();
     </script>
 </body>
 </html>

@@ -35,7 +35,7 @@ and open the template in the editor.
                         <li class="tabs-title"><a href="#panel2v">Daily Orders</a></li>
                         <li class="tabs-title"><a href="#panel3v">Recipe Book</a></li>
                         <li class="tabs-title"><a href="#panel4v">Customers</a></li>
-                        <li class="tabs-title"><a href="#panel5v">Finance Tracking</a></li>
+                        <li class="tabs-title"><a href="#panel5v">This week's menu</a></li>
                         <li class="tabs-title"><a href="#panel6v">Settings</a></li>
                     </ul>
                 </div>
@@ -120,6 +120,7 @@ and open the template in the editor.
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="tabs-panel DailyOrders" id="panel2v">
                             <div class="row full DailyOrdersSheet">
                                 <div class="medium-2 column">Name</div>
@@ -146,6 +147,7 @@ and open the template in the editor.
                                 <div class="medium-1 column"></div>
                             </div>
                         </div>
+                        
                         <div class="tabs-panel RecipeBook" id="panel3v">
                             <!--<div class="top-bar RecipeTopBar">
                                 <div class="top-bar-left">
@@ -194,9 +196,17 @@ and open the template in the editor.
                             echo getAllUsers();
                             ?>
                         </div>
-                        <div class="tabs-panel FinanceTracking" id="panel5v ">
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        
+                        <div class="tabs-panel WeeklyMenu" id="panel5v">
+                            <div class="row full">
+                            <?php
+                                require_once 'PHPHelpers/getMenu.php';
+                                $menu = getMenu();
+                                var_dump($menu);
+                            ?>
+                            </div>
                         </div>
+                        
                         <div class="tabs-panel Settings" id="panel6v">
                             <img class="thumbnail" src="assets/img/generic/rectangle-5.jpg">
                         </div>

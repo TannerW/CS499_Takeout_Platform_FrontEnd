@@ -5,6 +5,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+/**
+       * 
+       * redirect users after login submission
+       *
+       * @param none
+       * @return enforce page redirection
+       */
+
+//!!!!!!!!!!THIS IS A DEPRECATED FILE!!!!!!!!!!!!!!!!!
 include('/var/html/www/PHPHelpers/getMyProfileButton.php');
 
 //$string = getMyProfileButton();
