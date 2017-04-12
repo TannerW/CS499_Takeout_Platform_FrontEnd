@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+//-------THIS FILE WILL SOON BE DEPRECATED AND WILL BE IMPLEMENTED IN PHP-----
 function toSimpleJson(serializedData) {
     var ar1 = serializedData.split("&");
     var json = "{";

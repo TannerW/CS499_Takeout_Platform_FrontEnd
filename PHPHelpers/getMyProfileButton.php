@@ -1,17 +1,27 @@
 <?php
 
+/**
+       * 
+       * acquire authorization token and permissions for current user
+       *
+       * @param none
+       * @return current user information to construct profile button
+       */
+
 function getMyProfileButton() {
     /*
      * To change this license header, choose License Headers in Project Properties.
      * To change this template file, choose Tools | Templates
      * and open the template in the editor.
      */
+    //--------------ACQUIRE TOKEN---------------
     require_once './httpful.phar';
 
     $cookie_name = "token";
     if (!isset($_COOKIE[$cookie_name])) {
         return "No token";
     } else {
+        //----------send token, ask for me to aquire "me" info---------
         $url = "https://www.anderskitchen.com/api/me";
         $headers = array('Content-Type' => 'application/json', 'Authorization' => 'JWT ' . $_COOKIE[$cookie_name]);
 
@@ -31,10 +41,11 @@ function getMyProfileButton() {
         $result .= $response;
 
 
-        echo $currLocation;
+        //echo $currLocation;
 
         $string = json_decode($result, true);
 
+        //return "me" info
         return $string;
     }
 }

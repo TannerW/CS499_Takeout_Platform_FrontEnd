@@ -1,15 +1,17 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<?php
+/**
+       * 
+       * recipe scheduling assistant page
+       *
+       */
+
+       ?>
 <html>
     <head>
         <title>Ander's Kitchen | Scheduling Helper</title>
@@ -25,6 +27,7 @@ and open the template in the editor.
 
     <body>
 <?php
+//--------------ACQUIRE TOKEN---------------
     require_once'./httpful.phar';
 
     $cookie_name = "token"; //JWT token
@@ -32,10 +35,11 @@ and open the template in the editor.
     if (!isset($_COOKIE[$cookie_name])) {
         return "False";
     } else {
+        //----------send token, post recipe data---------
         $requesturl = "https://www.anderskitchen.com/api/menu"; //request url
         
         $data = array(
-                'date' => $_POST["dp1"],
+                'date' => "",
                 'recipe_id' => $_POST["recipe_id"],
                 'misc' => json_encode(array(
                     'recipe_name' => $_POST["recipeName"],
@@ -50,6 +54,7 @@ and open the template in the editor.
         $result .= $response;
         $string = json_decode($result, true);
         
+        //dump page response for debugging
         var_dump($string);
     }
 

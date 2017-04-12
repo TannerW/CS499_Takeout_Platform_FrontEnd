@@ -11,15 +11,18 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/foundation.css" /> <!--foundation styles-->
         <link rel="stylesheet" href="css/ownerPortal.css" />
+        <link rel="stylesheet" href="css/RecipeBook.css" />
         <link rel="stylesheet" href="css/foundation-datepicker.css" />
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" />
         <link href="https://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
 
         <?php
+        //check permissions
         require_once './httpful.phar';
         include 'PHPHelpers/permissionPolicer.php';
         $permission = permissionPolicer();
+        
         ?>
     </head>
 
@@ -75,13 +78,33 @@ and open the template in the editor.
                 }
                 ?> 
             </div>
-<?php } ?>
+        <?php } ?>
 
         <script type="text/javascript" src="js/vendor/jquery.js"></script>
         <script type="text/javascript" src="js/vendor/foundation.min.js"></script>
         <script type="text/javascript" src="js/script.js"></script> <!---My custom jscript and jquery--->
+        <script type="text/javascript" src="js/jquery.lazyload.min.js"></script>
         <script type="text/javascript">
             $(document).foundation();
+
+            $(window).on(
+                    'open.zf.reveal', function () {
+
+                        $('iframe').each(function () {
+                            var parentDiv = $(this).parent().closest('div');
+                            if (parentDiv.css("display") !== "none")
+                            {
+                                $(this).attr("src", $(this).data("src"));
+                            }
+                        });
+
+
+                    }
+            );
+    
+//    $(function() {
+//    $("img.lazy").lazyload();
+//});
         </script>
     </body>
 </html>
