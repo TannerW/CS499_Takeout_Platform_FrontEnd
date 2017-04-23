@@ -77,4 +77,8 @@ and open the template in the editor.
 .DailyOrdersSheet column {
   border-right: thin solid #000; }
 
+.tab-panel {
+  padding-bottom: 0 !important;
+  padding-top: 0 !important; }
+
 /*# sourceMappingURL=ownerPortal.css.map */

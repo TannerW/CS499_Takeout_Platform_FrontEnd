@@ -4,10 +4,20 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : Mar 19, 2017, 11:54:00 AM
+    Created on : Apr 9, 2017, 6:00:03 PM
     Author     : tannerwilkerson
 */
 
-#email{
-    //margin-top: 10%;
+.card{
+    $card-shadow:true;
+    height: 700px;
+}
+
+.card img{
+    height: 350px;
+    width: 350px;
+}
+
+.button{
+    margin:0 0 1rem !important;
 }
